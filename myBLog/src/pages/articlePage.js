@@ -6,9 +6,11 @@ import CommentsList from '../components/commentsList';
 import AddCommentForm from '../components/addCommentForm';
 import useUser from '../hooks/useUser';
 import articles from './articleContent';
+import {useNavigate } from  'react-router-dom'; // useNavigate will be used to send us to the log in page whenever the user clicks login 
 
 const ArticlePage = () => {
 
+  const navigate = useNavigate();
 
   /* below we added a state called article info to our article page component*/
   /* in useState we pass in the initial state vlaue and it returns an array with 2 values,
@@ -102,7 +104,9 @@ if the user isn't logged in we want to hide the AddCommentForm and instead displ
 
             {user 
               ?<button onClick = {addUpvote}>{canUpvote ? 'Upvote': 'Already Upvoted'}</button> // if the user exists aka is logged in we display the upvote button
-              : <button>Log in to upvote</button> // if the user doesn't exist aka isn't logged in we display login button
+              : <button onClick={() => {
+                navigate('/login');
+            }}>Log in to upvote</button> // if the user doesn't exist aka isn't logged in we display login button
             } 
 
            <p>This article has {articleInfo.upvotes} upvote(s)</p>
@@ -115,7 +119,9 @@ if the user isn't logged in we want to hide the AddCommentForm and instead displ
             ?<AddCommentForm
               articleName={articleId}
               onArticleUpdated={updatedArticle => setArticleInfo(updatedArticle)} /> // if the user exists aka is logged in we display the comment form
-            :<button>Log in to add a comment</button> // if the user doesn't exist aka isn't logged in we display a login to add comment button
+            :<button onClick={() => {
+              navigate('/login');
+          }}>Log in to add a comment</button> // if the user doesn't exist aka isn't logged in we display a login to add comment button
           }
           
           <CommentsList comments={articleInfo.comments} />
