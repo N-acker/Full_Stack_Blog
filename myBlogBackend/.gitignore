@@ -6,4 +6,4 @@ credentials.json
 
 # production
 /build
-/prod-env.yaml
+prod-env.yaml
