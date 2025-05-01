@@ -60,6 +60,13 @@ app.get(/^(?!\/api).+/, (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
 })
 
+// everything above is so that we can run the fron-end build folder in the backend 
+
+
+
+
+
+
 /* we will make it so that when our app receives a GET request on an endpoint /hello
 it will simply respopnd wih a message saying hello*/
 

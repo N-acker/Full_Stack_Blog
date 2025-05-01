@@ -37,3 +37,6 @@ This is the full-stack repository for my personal blog, containing both the fron
    - Install dependencies: `npm install`.
    - Start the development server: `npm start`.
    - Open your browser and navigate to `http://localhost:3000`.
+## OR
+You can check out the link below since it was deployed to google cloud:
+https://my-react-blog-c1727.ue.r.appspot.com/
