@@ -1,9 +1,14 @@
-# these are all the files that we don't want to push onto github
+# Node.js
+node_modules/
+build/
 
-/node_modules
+# MongoDB
 /mongoDB-data
-credentials.json
 
-# production
-/build
-prod-env.yaml
+# Secrets
+credentials.json
+prod-env.yaml       
+
+# Environment files
+.env
+*.env
