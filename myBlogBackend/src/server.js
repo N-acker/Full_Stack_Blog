@@ -29,17 +29,27 @@ const __dirname = path.dirname(__filename);
 
 // this is where we're gonna set up our firebase-admin package on our node server
 // below we've loaded our credentials
-const credentials = JSON.parse(
-    fs.readFileSync('./credentials.json')
-);
+// const credentials = JSON.parse(
+//     fs.readFileSync('./credentials.json')
+// );
 
 // here we're initializing our firebase admin package on our server and connecting it to our firebase project 
 // we're basically telling the firebase admin package what credentials to use in order to connect to our project
 // now we have firebase admin aded to our backend and we also have credentials that allow it to verify users that make requests to our servers
 // this verification allows users to only make upvotes once and allows users who are logged in to add comments 
+// admin.initializeApp({
+//     credential: admin.credential.cert(credentials),
+// });
+
+
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
 admin.initializeApp({
-    credential: admin.credential.cert(credentials),
+  credential: admin.credential.cert(serviceAccount),
 });
+
+// we use the above code to replace the code above the above code specifically to deploy on railway
+
 
 // this creates a new express app for us 
 /* now that we have our app we can define different endpoints as well as what
