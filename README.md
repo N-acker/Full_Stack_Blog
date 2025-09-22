@@ -40,4 +40,4 @@ This is the full-stack repository for my personal blog, containing both the fron
 ## OR
 You can check out the link below since it was deployed to google cloud:
 
-[https://my-react-blog-c1727.ue.r.appspot.com/](https://fullstackblog-production-e2d3.up.railway.app/)
+[https://fullstackblog-production-e2d3.up.railway.app/](https://fullstackblog-production-e2d3.up.railway.app/)
